@@ -11,6 +11,8 @@ if size(x,1) == 1; x = x'; endif
 % Inicializa el vector de soluciones y el error
 X=x; E=1.0;
 
+iter = [0]; % Inicializamos el vector de iteraciones
+
 % Bucle principal del método de Newton-Raphson
 for i = 1:100
    % Calcula la función y el Jacobiano
@@ -27,14 +29,21 @@ for i = 1:100
    err=norm(dx,inf);
    E=[E;err];
 
+   iter = [iter; i]; % Almacena la iteración que se realizo
+
    % Verifica si se alcanza la tolerancia deseada y detiene el bucle si es así
    if  err< tol
        break
    end
 end
 
-% Asigna el número de iteraciones y devuelve el vector de soluciones y el error
-niter=i; X=[X' E];
+% Asigna el número de iteraciones 
+niter=i;
+
+%y Devuelve el vector de soluciones agregando primero las iteraciones y de ultimo el error
+X=[iter X' E];
+
+%X= X'; %Este es el caso que se quiera tener la tabla al reves, sino solo comentarlo
 endfunction
 
 % Funcion para 2 Ecuaciones
