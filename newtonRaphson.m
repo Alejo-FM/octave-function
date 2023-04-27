@@ -36,3 +36,39 @@ end
 % Asigna el número de iteraciones y devuelve el vector de soluciones y el error
 niter=i; X=[X' E];
 endfunction
+
+% Funcion para 2 Ecuaciones
+
+function [y, jac] = f(x)
+  y = zeros (2, 1);
+  y(1) = x(1)^2- 10 * x(1)+x(2)^2+8;
+  y(2) = x(1) * x(2)^2 + x(1) - 10 * x(2) + 8;
+
+  jac = zeros (2, 2);
+  jac(1,1) = 2*x(1) - 10;
+  jac(1,2) = 2 * x(2);
+  jac(2,1) = x(2)^2 + 1 ;
+  jac(2,2) = 2 * x(1) * x(2) - 10;
+
+endfunction
+
+%Función para 3 Ecuaciones
+
+%function [y, jac] = f(x)
+%  y = zeros (3, 1);
+%  y(1) = x(1)^2- 10 * x(1)+x(2)^2+8;
+%  y(2) = x(1) * x(2)^2 + x(1) - 10 * x(2) + 8;
+%  y(3) =   ;
+
+%  jac = zeros (3, 3);
+%  jac(1,1) = 2*x(1) - 10;
+%  jac(1,2) = 2 * x(2);
+%  jac(1,3) =         ;
+%  jac(2,1) = x(2)^2 + 1 ;
+%  jac(2,2) = 2 * x(1) * x(2) - 10;
+%  jac(2,3) =   ;
+%  jac(3,1) = ;
+%  jac(3,2) = ;
+%  jac(3,3) = ;
+
+%endfunction
