@@ -1,0 +1,24 @@
+Puedes crear arreglos utilizando corchetes [] y separando los elementos con comas , 
+o espacios. Para crear una nueva fila, usa un punto y coma ;  
+
+Crear arreglos
+
+B = zeros(3, 3) % crea un arreglo de 3x3 lleno de ceros
+C = ones(2, 4)  % crea un arreglo de 2x4 lleno de unos
+D = rand(3, 2)  % crea un arreglo de 3x2 con números aleatorios entre 0 y 1
+E = eye(4)      % crea una matriz identidad de 4x4
+
+Acceso
+
+elemento = A(2, 3) % accede al elemento en la fila 2, columna 3 (el valor será 6)
+
+Modificar
+
+A(2, 3) = 10 % cambia el valor del elemento en la fila 2, columna 3 a 10
+
+Operaciones 
+
+suma = A + B
+resta = A - B
+producto = A * B % multiplicación de matrices
+elemento_por_elemento = A .* B % multiplicación elemento por elemento
