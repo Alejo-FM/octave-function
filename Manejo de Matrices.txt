@@ -22,3 +22,11 @@ suma = A + B
 resta = A - B
 producto = A * B % multiplicación de matrices
 elemento_por_elemento = A .* B % multiplicación elemento por elemento
+
+Formato de Salidas
+
+format short %Muestra hasta 5 cifras significativas
+format long  %Muestra hasta 15 cifras significativas.
+format short e %  Muestra hasta 5 cifras significativas, con notación exponencial.
+format long e % Muestra hasta 15 cifras significativas, con notación exponencial.
+output_precision(n) % Indica la presicion q se quiere (no pasarse de 16)
