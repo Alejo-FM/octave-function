@@ -1,3 +1,7 @@
+f = @(x,y) 2 * x(1)^2 + (x(2) - 1)^2 - 2
+
+g = @(x,y) 3 * x(1)^2 - 2 * x(1) * x(2) - 6 * x(2)^2 + 3
+
 function [X,niter] = newtonRaphson(x,tol)
 % Metodo de Newton para sistemas de ecuaciones no lineales
 % fi(x1,x2,...,xn) = 0, i = 1,2,...,n.
