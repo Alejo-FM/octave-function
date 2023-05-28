@@ -1,0 +1,36 @@
+1. Subo los datos que mande el profe
+
+2. plot(x,y,'o')
+
+    #Voy creando los polinomios (x,y,z) -> Z es el grado del polinomio
+3. p1 = polyfit(x,y,1)
+    #Imprime en pantalla el polinomio
+4. polyout(p1,'x')
+
+5. xx = 1:0.001:10;
+6. yy = polyval(p1,xx);
+7. plot(x,y,'o',xx,yy)
+    #Calculo el Error
+8. E1 = sum((y-polyval(p1,x)).^2) 
+
+    p2 = polyfit(x,y,2)
+    p3 = polyfit(x,y,3)
+    p4 = polyfit(x,y,4)
+    yy2 = polyval(p2,xx);
+    yy3 = polyval(p3,xx);
+    yy4 = polyval(p4,xx);
+
+Imprimir grafica
+    subplot(2,2,1)
+    plot(x,y,'o',xx,yy)
+    title('Polinomio de grado 1')
+    subplot(2,2,2)
+    plot(x,y,'o',xx,yy2)
+    title('Polinomio de grado 2')
+    subplot(2,2,3)
+    plot(x,y,'o',xx,yy3)
+    title('Polinomio de grado 3')
+    subplot(2,2,4)
+    plot(x,y,'o',xx,yy4)
+    title('Polinomio de grado 4')
+

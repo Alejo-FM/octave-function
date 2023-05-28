@@ -1,0 +1,30 @@
+Dados los siguientes datos:
+    x: 0.50    0.51    0.52    0.53    0.54
+    y: 0.69146 0.69497 0.69847 0.70194 0.75014
+
+(a) Obtener el polinomio de interpolacion de grado 4
+    x = [0.50 0.50 0.51 0.52 0.53 0.54]
+
+    y = [0.69146 0.69497 0.69847 0.70194 0.75014]
+
+    p = polyfit(x,y,4) //Calcula el polinomio usando los valores x,y & el 4 indica el grado
+
+    polyout(p,'x')  //Retorna el polinimio, 'x' -> para que salga con x
+
+(b) Graficar el polinimio junto con los datos 
+    xx = 0.5:0.001:0.54;
+    yy = polyval(p,xx)  //Evalua el polinimio
+    plot(x,y,'or',xx,yy) //Grafica
+
+(c) Aproximar el valor de la función en x = 0.525
+    polyval(p, 0.525)
+
+(d) Mostrar el trabajo en documento Word
+    diary "Nombre que se le quiera dar"
+    ...
+    diary off
+
+Extra:
+roots(p) -> Calcula las raices
+polyder(p) -> Calcula la derivada
+polyint(p) -> Calcula la integral
