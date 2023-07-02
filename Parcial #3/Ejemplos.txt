@@ -1,0 +1,30 @@
+(1) Dado el PVI
+dy/dx = 3x + 3y
+y(0) = 1,  0 <= x <= 1
+
+(a) Aproximar la solución usando el metodo de Euler con n=10
+-   f = @(x,y) 3*x + 3*y
+-   M = euler(f,0,1,1,10)
+
+(b) Calcular el erro sabiendo que la solución exacta es y= 4/3e^3x - x - (1/3)
+-   g = @(x) (4/3) * exp(3*x) - x - (1/3)
+-   solExacta = g(M(:,1))
+-   ErrorEuler = abs(solExacta) - M(:,2)  (Quedo en duda si el abs es sobre todo)
+-   norm(ErrorEuler) -> ans = Error
+
+(c) Graficar la solución exacta y la aproximada en una misma ventana
+-   plot(M(:,1), M(:,2), 'or', M(:,1), solExacta )
+
+(2) Dado el PVI
+dy/dx = x^2 -3y
+y(0) = 1,  0 <= x <= 1
+
+(a) Aproximar la solución usando el metodo de Euler Mejorado con n=10
+-   M = eulerMejorado(f,0,1,1,10)
+
+(b) Usando un polinomio de minimos cuadrados de segundo grado, aproximar la solución en y(1.25)
+-    p = polyfit( M(:,1), M(:,2), 2 )
+-    polyval(p,1.25)
+
+(c) Graficar
+-   plot( M(:,1), M(:,2), 'or', M(:,1), polyval(p,M(:,1)))

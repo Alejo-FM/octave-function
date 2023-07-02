@@ -4,11 +4,12 @@ function M = euler(f,x0,y0,xf,n)
     X= zeros(1,n+1);
     Y= zeros(1,n+1);
     X= x0:h:xf;
-    Y(1)= y0
+    Y(1)= y0;
 
     for j=1:n
         k =feval(f, X(j), Y(j) ); %Evalua la función F en Xj n Yj
         Y(j+1) = Y(j)+ h*k;
-    endFor
+    endfor
     M =[X' Y'];
-endFunction
+
+end
